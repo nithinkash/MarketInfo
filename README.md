@@ -59,4 +59,4 @@ I've hosted this on aws EC2 instance using WSGI and Apache server. [This](https:
 insight on deploying django apps using WSGI + apache.
 
 One thing I've done to run q_cluster on cloud is to configure [supervisor](https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps)
-Supervisor's are used to run multiple processes and commands it can startup automatically after a reboot.
+Supervisor's are used to run multiple processes and commands it can startup automatically after a reboot. **q_cluster.sh** shell script can be used to run qcluster using supervisor on cloud.
