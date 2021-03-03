@@ -1,0 +1,20 @@
+body{
+	padding: 5vw;
+}
+
+#logo img{
+	width: 20vw;
+}
+#nav-links {
+	float:right;
+}
+#nav-links a{
+	margin-left: 3vw;
+}
+form{
+	margin-left:5vw;
+	display: inline-block;
+}
+header{
+	margin-bottom: 7vw;
+}

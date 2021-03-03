@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block body %}
+	    {% for item in search %}
+            <tr>
+               <td >{{item.SC_CODE}}</td>
+               <td >{{item.SC_NAME}}</td>
+               <td >{{item.OPEN}}</td>
+               <td >{{item.HIGH}}</td>
+               <td >{{item.LOW}}</td>
+               <td >{{item.CLOSE}}</td>
+            </tr>
+        {% endfor %}
+{% endblock %}

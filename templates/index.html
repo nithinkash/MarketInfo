@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {%  load static %}
+		<title>ZERODHA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/css/main.css" />
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+		<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+		<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+	</head>
+<body>
+	<header>
+		<div id="logo">
+			<a href="/"><img src="{% static 'img/Zerodha-Logo.jpg' %}"></a>
+		</div>
+		<div id="nav-links">
+			<a href="/">MarketInfo</a>
+			<a href="https://github.com/nithinkash/MarketInfo" target="_blank">Github</a>
+			<form method="get" action="/search">
+				<input autofocus type="text" name="query" id="query" placeholder="Search" value = "{{ query }}" autocomplete = "off" maxlength = "52"/>
+			</form>
+		</div>
+	</header>
+    <table>
+      <thead>
+        <tr>
+          <th >S.NO</th>
+          <th >NAME</th>
+          <th >OPEN</th>
+          <th >HIGH</th>
+          <th >LOW</th>
+          <th >CLOSE</th>
+        </tr>
+      </thead>
+	  <tbody class=list>
+            {% block body %}{% endblock %}
+		</tbody>
+    </table></br></br></br>
+  </div>
+</body>
+<script type="text/javascript">
+  var options = {
+      valueNames: [ 'name' ]
+  };
+  var featureList = new List('stocks', options);
+</script>
+</html>
