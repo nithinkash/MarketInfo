@@ -2,7 +2,7 @@
 <html>
 	<head>
         {%  load static %}
-		<title>ZERODHA</title>
+		<title>BSE | MarketInfo</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/static/css/main.css" />
@@ -13,11 +13,9 @@
 <body>
 	<header>
 		<div id="logo">
-			<a href="/"><img src="{% static 'img/Zerodha-Logo.jpg' %}"></a>
+			<a href="/"><img src="{% static 'img/bselogo.png' %}"></a>
 		</div>
 		<div id="nav-links">
-			<a href="/">MarketInfo</a>
-			<a href="https://github.com/nithinkash/MarketInfo" target="_blank">Github</a>
 			<form method="get" action="/search">
 				<input autofocus type="text" name="query" id="query" placeholder="Search" value = "{{ query }}" autocomplete = "off" maxlength = "52"/>
 			</form>
