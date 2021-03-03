@@ -37,7 +37,6 @@ def index(request):
         result.append(r.hgetall(code).copy())
     result = result[0:10]
     context={'result':result}
-    print(result[0])
     return render(request, "search.html", {'search':result})
 
 def search(request):
