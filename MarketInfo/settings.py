@@ -26,7 +26,7 @@ SECRET_KEY = '55jf0c369^@a^frcgag^eky(n(4mml2#d9uuxi*gvk+oknp0r+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['15.207.109.43']
+ALLOWED_HOSTS = ['15.207.109.43', '65.1.169.59']
 
 
 # Application definition
@@ -44,7 +44,8 @@ INSTALLED_APPS = [
 
 Q_CLUSTER = {
     "name": "shop",
-    "orm": "default",  # Use Django's ORM + database for broker
+    "orm": "default",
+    'timeout': 60  # Use Django's ORM + database for broker
 }
 
 
