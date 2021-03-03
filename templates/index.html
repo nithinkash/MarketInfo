@@ -16,6 +16,7 @@
 			<a href="/"><img src="{% static 'img/bselogo.png' %}"></a>
 		</div>
 		<div id="nav-links">
+            <button>Export to CSV file</button>
 			<form method="get" action="/search">
 				<input autofocus type="text" name="query" id="query" placeholder="Search" value = "{{ query }}" autocomplete = "off" maxlength = "52"/>
 			</form>
@@ -39,9 +40,39 @@
   </div>
 </body>
 <script type="text/javascript">
-  var options = {
-      valueNames: [ 'name' ]
-  };
-  var featureList = new List('stocks', options);
+
+  function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    csvFile = new Blob([csv], {type: "text/csv"});
+    downloadLink = document.createElement("a");
+    downloadLink.download = filename;
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+}
+
+function export_table_to_csv(html, filename) {
+	var csv = [];
+	var rows = document.querySelectorAll("table tr");
+
+    for (var i = 0; i < rows.length; i++) {
+		var row = [], cols = rows[i].querySelectorAll("td, th");
+
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+
+		csv.push(row.join(","));
+	}
+
+    download_csv(csv.join("\n"), filename);
+}
+
+document.querySelector("button").addEventListener("click", function () {
+    var html = document.querySelector("table").outerHTML;
+	export_table_to_csv(html, "table.csv");
+});
 </script>
 </html>
