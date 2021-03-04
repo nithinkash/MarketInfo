@@ -10,6 +10,8 @@ log = logging.getLogger(__name__)
 r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
 
 def fetch_api():
+    # instead of first getting the whole page and then extracting the URL using beutifulsoap i figured out that BSE always stores the file in EQ030321_CSV.ZIP format
+    # so I've used the date to get current date and form the filename that can be requested directly.
     today_date = str(date.today()).split('-')[::-1]
     day, month = today_date[:2]
     url = 'https://www.bseindia.com/download/BhavCopy/Equity/EQ{0}{1}21_CSV.ZIP'.format(day,month)
