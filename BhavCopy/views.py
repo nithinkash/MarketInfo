@@ -38,7 +38,6 @@ def index(request):
         code = r.get(key)
         result.append(r.hgetall(code).copy())
     result = result[0:10]
-    context={'result':result}
     return render(request, "search.html", {'search':result})
 
 def search(request):
