@@ -1,7 +1,6 @@
 # MarketInfo
 Get your daily market updates from Bombay stock exchange
 
-project hosted on [65.1.169.59](http://65.1.169.59/)
 
 ### INSTALLING AND RUNNING ###
 
